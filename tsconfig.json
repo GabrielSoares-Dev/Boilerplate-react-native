@@ -53,7 +53,10 @@
       "@types": [
         "./src/@types"
       ]
-    }
+    },
+    "types": [
+      "@types/styled-components-react-native"
+    ],
   },
   "include": [
     "src"

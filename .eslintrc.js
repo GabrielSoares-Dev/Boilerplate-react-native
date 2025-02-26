@@ -7,7 +7,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     '@rocketseat/eslint-config/react',
   ],
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js', 'metro.config.js'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {

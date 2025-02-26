@@ -1,9 +1,10 @@
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
+import * as S from './styles'
 
 export function Login() {
   return (
     <View>
-      <Text>Login</Text>
+      <S.Text>Login</S.Text>
     </View>
   )
 }
