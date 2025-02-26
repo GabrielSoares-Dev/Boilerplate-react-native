@@ -1,11 +1,11 @@
 import React from 'react'
-import { View } from 'react-native'
 import { Main } from '@routes'
+import { NavigationContainer } from '@react-navigation/native'
 
 export function App() {
   return (
-    <View>
+    <NavigationContainer>
       <Main />
-    </View>
+    </NavigationContainer>
   )
 }
