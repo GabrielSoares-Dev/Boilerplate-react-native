@@ -1,12 +1,11 @@
 import React from 'react'
-import { Text, View } from 'react-native'
-import { TEST } from '@env'
+import { View } from 'react-native'
+import { Main } from '@routes'
 
 export function App() {
-  console.log('AAAAAAAAAAA', TEST)
   return (
     <View>
-      <Text>Test</Text>
+      <Main />
     </View>
   )
 }
