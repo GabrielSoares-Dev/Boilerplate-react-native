@@ -1,10 +1,19 @@
-import { View } from 'react-native'
+import { Alert } from 'react-native'
+import { Button, ButtonLoading } from '@components'
 import * as S from './styles'
 
 export function Login() {
   return (
-    <View>
-      <S.Text>Login</S.Text>
-    </View>
+    <S.Container>
+      <S.ButtonContainer>
+        <Button
+          variant="primary"
+          onPress={() => Alert.alert('oi')}
+          label="Entrar"
+          isLoading
+          loading={<ButtonLoading variant="primary" />}
+        />
+      </S.ButtonContainer>
+    </S.Container>
   )
 }

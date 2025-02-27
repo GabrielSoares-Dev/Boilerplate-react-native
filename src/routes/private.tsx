@@ -1,16 +1,15 @@
-import { Public, Private } from '@routes'
+import { Home } from '@pages'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 const Stack = createNativeStackNavigator()
 
-export function Main() {
+export function Private() {
   return (
     <Stack.Navigator
-      initialRouteName="Public"
+      initialRouteName="Home"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="Public" component={Public} />
-      <Stack.Screen name="Private" component={Private} />
+      <Stack.Screen name="Home" component={Home} />
     </Stack.Navigator>
   )
 }
