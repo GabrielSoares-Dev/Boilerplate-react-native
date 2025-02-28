@@ -15,4 +15,6 @@ export const Input = styled.TextInput<{ hasError?: boolean }>`
   background-color: #fff;
   elevation: 5;
   width: 100%;
+  font-weight: 500;
+  font-family: ${({ theme }) => theme.fonts.medium};
 `

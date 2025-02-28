@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components/native'
 import { theme } from '@constants'
 import type { AppProviderProps } from '@providers'
 

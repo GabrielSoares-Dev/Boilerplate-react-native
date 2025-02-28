@@ -5,7 +5,6 @@ module.exports = {
     '!**/node_modules/**',
     '!**/main.tsx',
     '!**/App.tsx',
-    '!**/vite-env.d.ts',
     '!**/index.ts',
     '!**/routes/**',
     '!**/components/types/**',
@@ -32,6 +31,6 @@ module.exports = {
     '^@providers$': '<rootDir>/src/providers',
     '^@pages$': '<rootDir>/src/pages',
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
-    '^@tests/(.*)$$': '<rootDir>/tests/$1',
+    '^@tests/(.*)$': '<rootDir>/tests/$1',
   },
 }

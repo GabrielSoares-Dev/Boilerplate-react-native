@@ -4,5 +4,6 @@ export const Label = styled.Text`
   font-size: 16px;
   color: #000;
   margin-bottom: 5px;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: ${({ theme }) => theme.fonts.semiBold};
 `

@@ -3,11 +3,8 @@
   "compilerOptions": {
     "jsx": "react-native",
     "paths": {
-      "@tests": [
+      "@tests/*": [
         "./tests/*"
-      ],
-      "@assets": [
-        "./src/assets"
       ],
       "@pages": [
         "./src/pages"
