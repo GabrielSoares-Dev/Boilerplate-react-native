@@ -1,4 +1,4 @@
-import React, { act } from 'react'
+import React from 'react'
 import { render, fireEvent } from '@testing-library/react-native'
 import { Button, ButtonLoading } from '@components'
 
@@ -15,7 +15,7 @@ describe('Button', () => {
     const { getByText } = render(<Button label="test" onPress={onPress} />)
     const button = getByText('test')
 
-    act(() => fireEvent.press(button))
+    fireEvent.press(button)
 
     expect(onPress).toHaveBeenCalled()
   })
