@@ -8,4 +8,6 @@ export type InputProps<T extends FieldValues> = TextInputProps & {
   label?: ReactNode
   hasError?: boolean
   errorMessage?: ReactNode
+  rightIcon?: ReactNode
+  leftIcon?: ReactNode
 }

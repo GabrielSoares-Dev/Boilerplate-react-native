@@ -54,6 +54,8 @@
   "include": [
     "src",
     "tests",
+    "__mocks__/@react-native-vector-icons",
+    "__mocks__/file-mock.js",
   ],
   "exclude": [
     "babel.config.js",

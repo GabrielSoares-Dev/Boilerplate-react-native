@@ -9,24 +9,30 @@ export function Input<T extends FieldValues>({
   label,
   hasError = false,
   errorMessage,
+  leftIcon,
+  rightIcon,
   ...restOfProps
 }: InputProps<T>) {
   return (
     <S.Container>
       {label && label}
-      <Controller
-        control={control}
-        name={name}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <S.Input
-            hasError={hasError}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            {...restOfProps}
-          />
-        )}
-      />
+      <S.InputContainer hasError={hasError}>
+        {leftIcon && <S.LeftIconContainer>{leftIcon}</S.LeftIconContainer>}
+        <Controller
+          control={control}
+          name={name}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <S.Input
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              {...restOfProps}
+            />
+          )}
+        />
+        {rightIcon && <S.RightIconContainer>{rightIcon}</S.RightIconContainer>}
+      </S.InputContainer>
+
       {hasError && errorMessage}
     </S.Container>
   )

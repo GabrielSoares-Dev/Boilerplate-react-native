@@ -16,8 +16,6 @@ module.exports = {
     '!**/styles.ts',
   ],
   moduleNameMapper: {
-    '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
-      'identity-obj-proxy',
     '^@components$': '<rootDir>/src/components',
     '^@functions$': '<rootDir>/src/functions',
     '^@guards$': '<rootDir>/src/guards',
@@ -32,5 +30,6 @@ module.exports = {
     '^@pages$': '<rootDir>/src/pages',
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@tests/(.*)$': '<rootDir>/tests/$1',
+    '\\.(ttf)$': '<rootDir>/__mocks__/file-mock.js',
   },
 }

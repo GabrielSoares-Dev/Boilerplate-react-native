@@ -3,7 +3,9 @@ import { render, fireEvent, renderHook } from '@testing-library/react-native'
 import { useForm } from 'react-hook-form'
 import { Input, InputLabel, ErrorMessage } from '@components'
 import { ThemeWrapper } from '@tests/helpers'
+import Icon from '@react-native-vector-icons/feather'
 
+jest.mock('@react-native-vector-icons/feather')
 describe('Input', () => {
   it('Should be render input', () => {
     const { result } = renderHook(() => useForm<{ test: string }>())
@@ -63,5 +65,51 @@ describe('Input', () => {
     const errorMessage = getByText('test-error-message')
 
     expect(errorMessage).toBeVisible()
+  })
+
+  it('Should be render with left icon', () => {
+    const { result } = renderHook(() => useForm<{ test: string }>())
+    const { getByTestId } = render(
+      <ThemeWrapper>
+        <Input
+          name="test"
+          control={result.current.control}
+          placeholder="test"
+          testID="input-test-id"
+          hasError
+          errorMessage={<ErrorMessage message="test-error-message" />}
+          leftIcon={
+            <Icon name="eye" size={30} color="#000" testID="left-icon-test" />
+          }
+        />
+      </ThemeWrapper>,
+    )
+
+    const leftIcon = getByTestId('left-icon-test')
+
+    expect(leftIcon).toBeVisible()
+  })
+
+  it('Should be render with right icon', () => {
+    const { result } = renderHook(() => useForm<{ test: string }>())
+    const { getByTestId } = render(
+      <ThemeWrapper>
+        <Input
+          name="test"
+          control={result.current.control}
+          placeholder="test"
+          testID="input-test-id"
+          hasError
+          errorMessage={<ErrorMessage message="test-error-message" />}
+          rightIcon={
+            <Icon name="eye" size={30} color="#000" testID="right-icon-test" />
+          }
+        />
+      </ThemeWrapper>,
+    )
+
+    const rightIcon = getByTestId('right-icon-test')
+
+    expect(rightIcon).toBeVisible()
   })
 })
