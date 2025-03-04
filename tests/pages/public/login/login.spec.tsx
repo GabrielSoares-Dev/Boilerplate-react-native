@@ -22,7 +22,7 @@ jest.mock('@hooks', () => ({
 }))
 
 describe('Login', () => {
-  it('Should be render a  login page', () => {
+  it('Should be render login page', () => {
     const { getByText, getByPlaceholderText, getByTestId } = render(
       <ReactQueryWrapper>
         <ThemeWrapper>

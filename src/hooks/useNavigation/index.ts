@@ -1,12 +1,17 @@
 import { useNavigation as useReactNavigation } from '@react-navigation/native'
 import type { NavigationProp } from '@react-navigation/native'
-import { Screens } from '@enums'
+import { PublicScreens, PrivateScreens } from '@enums'
 
 export function useNavigation() {
   const navigation =
-    useReactNavigation<NavigationProp<Record<Screens, object | undefined>>>()
+    useReactNavigation<
+      NavigationProp<Record<PublicScreens | PrivateScreens, object | undefined>>
+    >()
 
-  const navigate = (screen: Screens, params?: object) => {
+  const navigate = (
+    screen: PublicScreens | PrivateScreens,
+    params?: object,
+  ) => {
     navigation.navigate(screen, params)
   }
 

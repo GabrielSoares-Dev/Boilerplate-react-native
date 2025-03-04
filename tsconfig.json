@@ -36,9 +36,6 @@
       "@hooks": [
         "./src/hooks"
       ],
-      "@guards": [
-        "./src/guards"
-      ],
       "@constants": [
         "./src/constants"
       ],

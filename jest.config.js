@@ -24,7 +24,6 @@ module.exports = {
   moduleNameMapper: {
     '^@components$': '<rootDir>/src/components',
     '^@functions$': '<rootDir>/src/functions',
-    '^@guards$': '<rootDir>/src/guards',
     '^@constants$': '<rootDir>/src/constants',
     '^@hooks$': '<rootDir>/src/hooks',
     '^@listeners$': '<rootDir>/src/listeners',

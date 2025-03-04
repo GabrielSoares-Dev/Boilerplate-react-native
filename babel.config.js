@@ -17,7 +17,6 @@ module.exports = {
           '@enums': './src/enums',
           '@store': './src/store',
           '@hooks': './src/hooks',
-          '@guards': './src/guards',
           '@constants': './src/constants',
           '@utils': './src/utils',
           '@types': './src/@types',
