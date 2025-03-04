@@ -18,6 +18,9 @@
       "@components": [
         "./src/components"
       ],
+      "@enums": [
+        "./src/enums"
+      ],
       "@functions": [
         "./src/functions"
       ],

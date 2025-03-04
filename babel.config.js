@@ -14,6 +14,7 @@ module.exports = {
           '@functions': './src/functions',
           '@providers': './src/providers',
           '@services': './src/services',
+          '@enums': './src/enums',
           '@store': './src/store',
           '@hooks': './src/hooks',
           '@guards': './src/guards',

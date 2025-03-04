@@ -6,6 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "reset:cache": "react-native start --reset-cache",
     "typecheck": "tsc",
     "lint:test": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
@@ -26,6 +27,7 @@
     "react-native": "0.78.0",
     "react-native-safe-area-context": "^5.2.0",
     "react-native-screens": "^4.9.1",
+    "react-native-toast-message": "^2.2.1",
     "styled-components": "^5.3.11",
     "zod": "^3.24.2",
     "zustand": "^5.0.3"

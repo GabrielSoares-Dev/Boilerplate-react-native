@@ -1,6 +1,6 @@
 import { hasError } from '@functions'
 
-describe('Has error', () => {
+describe('hasError', () => {
   it('Should be has error', () => {
     const result = hasError({ error: 'Has error' })
 
