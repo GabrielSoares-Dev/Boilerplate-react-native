@@ -14,6 +14,12 @@ import {
   loginFailedMock,
 } from '@tests/helpers'
 import { useAuthStore } from '@store'
+import { useNavigation } from '@hooks'
+import { PrivateScreens } from '@enums'
+
+jest.mock('@hooks', () => ({
+  useNavigation: jest.fn().mockImplementation(() => ({ navigate: jest.fn() })),
+}))
 
 describe('Login', () => {
   it('Should be render a  login page', () => {
@@ -53,8 +59,13 @@ describe('Login', () => {
   })
 
   it('Should be login successfully', async () => {
+    const mockNavigate = jest.fn()
+    // @ts-expect-error
+    useNavigation.mockReturnValue({ navigate: mockNavigate })
+
     loginSuccessfullyMock()
     const { result } = renderHook(() => useAuthStore())
+    const setAuthDataSpyOn = jest.spyOn(result.current, 'setAuthData')
     const { getByPlaceholderText, getByText } = render(
       <ReactQueryWrapper>
         <ThemeWrapper>
@@ -73,14 +84,20 @@ describe('Login', () => {
       fireEvent.press(loginButton)
     })
 
-    const expectedAuthData = {
+    const expectedSetAuthDataInput = {
       token: 'test-token',
     }
-    expect(result.current.data).toEqual(expectedAuthData)
+    expect(setAuthDataSpyOn).toHaveBeenCalledWith(expectedSetAuthDataInput)
+    expect(mockNavigate).toHaveBeenCalledWith(PrivateScreens.MAIN)
   })
 
   it('Should be login failed', async () => {
+    const mockNavigate = jest.fn()
+    // @ts-expect-error
+    useNavigation.mockReturnValue({ navigate: mockNavigate })
     loginFailedMock()
+    const { result } = renderHook(() => useAuthStore())
+    const setAuthDataSpyOn = jest.spyOn(result.current, 'setAuthData')
     const { getByPlaceholderText, getByText, findByText } = render(
       <ReactQueryWrapper>
         <ThemeWrapper>
@@ -104,5 +121,8 @@ describe('Login', () => {
       const toast = await findByText('Email ou senha inválida!')
       expect(toast).toBeTruthy()
     })
+
+    expect(setAuthDataSpyOn).not.toHaveBeenCalled()
+    expect(mockNavigate).not.toHaveBeenCalled()
   })
 })

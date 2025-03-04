@@ -7,11 +7,13 @@ import type { LoginFields } from '@pages/public/login/types'
 import { authService } from '@services'
 import type { LoginInput, LoginOutput } from '@services'
 import { showToast } from '@functions'
-import { ToastType } from '@enums'
+import { ToastType, PrivateScreens } from '@enums'
 import { useAuthStore } from '@store'
+import { useNavigation } from '@hooks'
 
 export function useLogin() {
   const { setAuthData } = useAuthStore()
+  const { navigate } = useNavigation()
   const [passwordIsEncrypted, setPasswordIsEncrypted] = useState(true)
   const { control, handleSubmit } = useForm<LoginFields>({
     resolver: zodResolver(loginSchema),
@@ -19,6 +21,7 @@ export function useLogin() {
 
   const onSuccess = (input: LoginOutput) => {
     setAuthData(input)
+    navigate(PrivateScreens.MAIN)
   }
 
   const onError = () => {
