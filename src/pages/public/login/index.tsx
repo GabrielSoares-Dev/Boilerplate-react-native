@@ -6,6 +6,7 @@ import * as S from './styles'
 
 export function Login() {
   const {
+    isLoading,
     passwordIsEncrypted,
     control,
     toggleEncryptedPassword,
@@ -44,6 +45,7 @@ export function Login() {
           variant="primary"
           onPress={handleSubmit(onSubmit)}
           label="Entrar"
+          isLoading={isLoading}
           loading={<ButtonLoading variant="primary" />}
         />
       </S.ButtonContainer>

@@ -32,16 +32,12 @@ describe('Button', () => {
   it('Should be render loading when isLoading is true', () => {
     const { getByText, getByTestId } = render(
       <ThemeWrapper>
-        <Button
-          label="Loading Button"
-          isLoading
-          loading={<ButtonLoading testID="loading-test-id" />}
-        />
+        <Button label="Loading Button" isLoading loading={<ButtonLoading />} />
       </ThemeWrapper>,
     )
 
     const loadingText = getByText('Processando...')
-    const loadingIndicator = getByTestId('loading-test-id')
+    const loadingIndicator = getByTestId('loading')
 
     expect(loadingText).toBeVisible()
     expect(loadingIndicator).toBeVisible()
