@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   react_native:
-    name: CI
+    name: BUILD APK
     uses: GabrielSoares-Dev/workflows/.github/workflows/react-native-build-apk.yml@master
     with:
       node_version: '22.x'
