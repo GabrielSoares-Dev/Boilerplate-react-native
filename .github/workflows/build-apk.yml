@@ -8,3 +8,4 @@ jobs:
     with:
       node_version: '22.x'
       java_version: '17'
+      env_vars: '{"API_URL": "https://api.life-control.com.br"}'
