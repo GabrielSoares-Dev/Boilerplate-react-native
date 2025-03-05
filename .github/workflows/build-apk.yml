@@ -1,0 +1,10 @@
+name: BUILD - APK
+on:
+  workflow_dispatch:
+jobs:
+  react_native:
+    name: CI
+    uses: GabrielSoares-Dev/workflows/.github/workflows/react-native-build-apk.yml@master
+    with:
+      node_version: '22.x'
+      java_version: '17'
