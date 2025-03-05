@@ -1,6 +1,8 @@
 name: BUILD - APK
 on:
   workflow_dispatch:
+env:
+  API_URL: https://api.life-control.com.br
 jobs:
   react_native:
     name: BUILD APK
