@@ -33,7 +33,7 @@ module.exports = {
         blocklist: null,
         allowlist: null,
         safe: false,
-        allowUndefined: false,
+        allowUndefined: true,
         verbose: false,
       },
     ],
