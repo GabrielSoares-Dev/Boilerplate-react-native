@@ -1,11 +1,9 @@
 name: BUILD - APK
 on:
   workflow_dispatch:
-env:
-  API_URL: https://api.life-control.com.br
 jobs:
   react_native:
-    name: BUILD APK
+    name: build apk
     uses: GabrielSoares-Dev/workflows/.github/workflows/react-native-build-apk.yml@master
     with:
       node_version: '22.x'
