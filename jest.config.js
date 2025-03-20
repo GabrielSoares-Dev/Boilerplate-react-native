@@ -31,6 +31,5 @@ module.exports = {
     '^@pages$': '<rootDir>/src/pages',
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@tests/(.*)$': '<rootDir>/tests/$1',
-    '\\.(ttf)$': '<rootDir>/__mocks__/file-mock.js',
   },
 }

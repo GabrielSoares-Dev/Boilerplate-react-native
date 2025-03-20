@@ -21,7 +21,7 @@ describe('useNavigation', () => {
     })
   })
 
-  it('should call navigate with correct parameters', () => {
+  it('Should call navigate with correct parameters', () => {
     const { result } = renderHook(() => useNavigation())
 
     act(() => result.current.navigate(PrivateScreens.MAIN, { test: 'test' }))
@@ -31,7 +31,7 @@ describe('useNavigation', () => {
     })
   })
 
-  it('should call goBack when goBack is triggered', () => {
+  it('Should call goBack when goBack is triggered', () => {
     const { result } = renderHook(() => useNavigation())
 
     act(() => result.current.goBack())
