@@ -10,3 +10,5 @@ jobs:
       java_version: '17'
       env_content: |
         API_URL=https://api.life-control.com.br
+    secrets:
+      release_key_base_64: ${{secrets.ANDROID_KEYSTORE_BASE64}}
