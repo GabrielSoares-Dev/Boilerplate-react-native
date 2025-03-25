@@ -11,5 +11,4 @@ jobs:
       env_content: |
         API_URL=https://api.life-control.com.br
     secrets:
-      aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID_DEV}}
-      aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY_DEV}}
+      release_key_base_64: ${{secrets.ANDROID_KEYSTORE_BASE64}}
